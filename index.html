@@ -604,6 +604,7 @@
       <a href="#shop">Shop</a>
       <a href="javascript:void(0)" onclick="openStoryModal()">Our Story</a>
       <a href="javascript:void(0)" onclick="openContactModal()">Contact</a>
+      <a href="javascript:void(0)" onclick="openReturnPolicyModal()">Return Policy</a>
     </nav>
     <div class="nav-actions">
       <button class="cart-btn" onclick="openCart()" aria-label="Open cart">
@@ -769,6 +770,7 @@
       <a href="#shop">Shop</a>
       <a href="javascript:void(0)" onclick="openStoryModal()">Our Story</a>
       <a href="javascript:void(0)" onclick="openContactModal()">Contact</a>
+      <a href="javascript:void(0)" onclick="openReturnPolicyModal()">Return Policy</a>
     </div>
     <p>© 2026 Sippora. Delivering across Mumbai only.</p>
   </div>
@@ -854,6 +856,34 @@
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>
           Serving Mumbai, pincode 400001–400104
         </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== RETURN POLICY MODAL ===== -->
+<div class="modal-overlay" id="returnPolicyModal">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h3>Return Policy</h3>
+      <button class="modal-close" onclick="closeReturnPolicyModal()" aria-label="Close">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <h2 style="font-size:26px;font-style:italic;font-weight:500;">Returns & Exchanges</h2>
+      <p style="color:var(--ink);font-size:15px;line-height:1.75;margin-top:16px;">We want you to love your Sippora tumbler. If your order arrives damaged, please contact us within 48 hours of delivery with clear photos and your order details.</p>
+      <div class="delivery-note" style="margin-top:20px;">
+        <h3>Damaged Products</h3>
+        <p>If your tumbler arrives broken or damaged, we will review the issue and, where applicable, arrange a replacement.</p>
+      </div>
+      <div class="delivery-note" style="margin-top:20px;">
+        <h3>Change of Mind</h3>
+        <p>As our products are made in small batches and are glassware, we currently do not accept returns or exchanges for change-of-mind purchases.</p>
+      </div>
+      <div class="delivery-note" style="margin-top:20px;">
+        <h3>How to Contact Us</h3>
+        <p>For any return or replacement request, please reach out through our Contact section with your order ID and photos of the product.</p>
       </div>
     </div>
   </div>
@@ -1073,6 +1103,7 @@ function closeAllOverlays(){
   closeCheckout();
   closeStoryModal();
   closeContactModal();
+  closeReturnPolicyModal();
 }
 
 /* ---------- Story / Contact popups ---------- */
@@ -1090,6 +1121,14 @@ function openContactModal(){
 }
 function closeContactModal(){
   document.getElementById('contactModal').classList.remove('active');
+  document.getElementById('overlay').classList.remove('active');
+}
+function openReturnPolicyModal(){
+  document.getElementById('returnPolicyModal').classList.add('active');
+  document.getElementById('overlay').classList.add('active');
+}
+function closeReturnPolicyModal(){
+  document.getElementById('returnPolicyModal').classList.remove('active');
   document.getElementById('overlay').classList.remove('active');
 }
 
